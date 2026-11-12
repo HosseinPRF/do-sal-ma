@@ -1,5 +1,5 @@
-// Offline support for edition 2.1 (self-contained index.html).
-const CACHE = 'do-sal-ma-v2-1';
+// Offline support for edition 2.2 (self-contained index.html).
+const CACHE = 'do-sal-ma-v2-2';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/favicon.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));

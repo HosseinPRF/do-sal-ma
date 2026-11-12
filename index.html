@@ -50,7 +50,7 @@ button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-de
 .category-picker{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-bottom:19px}
 .category-choice{background:linear-gradient(155deg,#37243e,#281c33);border:1px solid #fce9ee26;color:#ecdae7;min-height:90px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;gap:4px;font-size:11px;font-weight:700;line-height:1.5;transition:transform .18s,border-color .18s,background .18s;box-shadow:0 7px 16px #130c1c3d}
 .category-choice .choice-glyph{font-size:28px;line-height:1.3;color:var(--choice-color,#ffbed0)}.category-fun{--choice-color:#f4c3a6}.category-guess{--choice-color:#ceb3ff}.category-memory{--choice-color:#f1d6a6}.category-romance{--choice-color:#ffbfd2}.category-mission{--choice-color:#ffb8a4}
-.category-choice:hover:not(:disabled){transform:translateY(-2px);border-color:#ffddd263}.category-choice.is-selected{background:linear-gradient(150deg,#5c344e,#38253d);border-color:#f8c6d58c;box-shadow:0 0 0 1px #f8c6d53b inset,0 7px 16px #130c1c3d}.category-choice:disabled{opacity:.38;cursor:not-allowed}
+.category-choice:hover:not(:disabled){transform:translateY(-2px);border-color:#ffddd263}.category-choice.is-selected{background:linear-gradient(150deg,#5c344e,#38253d);border-color:#f8c6d58c;box-shadow:0 0 0 1px #f8c6d53b inset,0 7px 16px #130c1c3d}.category-choice.is-visited:not(.is-selected){border-color:#f8c6d564}.category-choice:disabled{opacity:.38;cursor:not-allowed}
 .empty-state{min-height:350px;border:1px dashed #f5c5d04b;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(130deg,#38243b55,#291c3355);text-align:center;padding:30px}
 .empty-heart{font-size:68px;color:#f3b8cb;line-height:1.1;text-shadow:0 0 40px #e7a7bf55;animation:float 4s ease-in-out infinite}.empty-state h2{font-size:23px;margin:8px 0 0}.empty-state p{font-size:12px;color:#bda9bf;margin:0}
 .game-card{min-height:355px}.game-card .card-body{padding:14px 0}.game-card .card-body h2{font-size:clamp(20px,2.6vw,27px);line-height:1.95}
@@ -110,9 +110,9 @@ button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-de
 
       <section id="gameView" class="view game-view" hidden aria-labelledby="gameHeading">
         <div class="game-heading-row"><button id="gameHomeBtn" class="back-link" type="button">→ خانه</button><span class="game-mini-title" id="gameHeading">دو سالِ ما <span>♡</span></span><button id="endEarlyBtn" class="subtle-text-btn" type="button">پایان بازی</button></div>
-        <div class="compact-progress" aria-label="پیشرفت بازی"><div class="compact-progress-text"><span id="turnLabel">نوبت منه</span><span id="counterLabel">۱ از ۱۲</span></div><div class="progress-track"><div id="turnProgress" class="progress-fill"></div></div></div>
+        <div class="compact-progress" aria-label="پیشرفت بازی"><div class="compact-progress-text"><span id="turnLabel">نوبت منه</span><span id="counterLabel">۱ از ۱۸</span></div><div class="progress-track"><div id="turnProgress" class="progress-fill"></div></div></div>
         <div class="game-center game-main">
-          <div class="pick-header"><strong>این نوبت چی انتخاب می‌کنی؟</strong><span>هر دفعه یه دسته</span></div>
+          <div class="pick-header"><strong>این نوبت چی انتخاب می‌کنی؟</strong><span>انتخاب با توئه</span></div>
           <div id="categoryPicker" class="category-picker" role="group" aria-label="انتخاب دستهٔ کارت"></div>
           <div id="emptyState" class="empty-state"><div class="empty-heart">♡</div><h2>یه دسته انتخاب کن</h2><p>ببینیم چی از آب درمیاد...</p></div>
           <div id="activeCardArea" hidden>
@@ -128,14 +128,14 @@ button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-de
 
       <section id="endingView" class="view ending-view" hidden aria-labelledby="endingTitle">
         <div class="end-confetti" aria-hidden="true">✦ ♡ ✧ ♡ ✦</div><div class="ending-header"><div class="end-large-heart" aria-hidden="true">♥</div><h1 id="endingTitle">بازم دلم می‌خواد<br><span class="gradient-text">باهات حرف بزنم.</span></h1><p id="endCaption">این دور بازی تموم شد ♡</p></div>
-        <div class="ending-stats end-stats-simple"><div><strong id="endTotal">۱۲</strong><span>نوبت با هم</span></div><div><strong id="endStars">۰</strong><span>حدس درست</span></div><div><strong id="endMissions">۰</strong><span>مأموریت</span></div></div>
+        <div class="ending-stats end-stats-simple"><div><strong id="endTotal">۱۸</strong><span>نوبت با هم</span></div><div><strong id="endStars">۰</strong><span>حدس درست</span></div><div><strong id="endMissions">۰</strong><span>مأموریت</span></div></div>
         <div class="wish-card"><div class="wish-heading"><span>✉</span><div><strong>یه یادگاری برای سال سوم</strong></div></div><label class="field"><span id="wishLabelOne">آرزوی نفر اول</span><textarea id="wishOne" rows="2" placeholder="سال بعد دوست دارم..." maxlength="400"></textarea></label><label class="field"><span id="wishLabelTwo">آرزوی نفر دوم</span><textarea id="wishTwo" rows="2" placeholder="منم دلم می‌خواد..." maxlength="400"></textarea></label><button id="copyWishesBtn" class="btn btn-primary btn-full" type="button">کپی یادگاری ♡</button></div>
         <div class="ending-buttons"><button id="extendBtn" class="btn btn-primary" type="button">۴ نوبت دیگه؟ ♡</button><button id="playAgainBtn" class="btn btn-outline" type="button">از اول</button></div>
       </section>
     </main>
     <footer class="site-footer"><span>برای دو سالِ ما ♡</span></footer>
   </div>
-  <dialog id="helpDialog" class="modal" aria-labelledby="helpTitle"><div class="modal-head"><h2 id="helpTitle">قانونش خیلی ساده‌ست ♡</h2><button type="button" class="modal-close" data-close="helpDialog" aria-label="بستن">×</button></div><div class="modal-body help-short"><p>نوبتی یه دسته انتخاب کنین و کارت رو بخونین. خوشتون نیومد؟ «یه کارت دیگه» یا یه دستهٔ دیگه رو بزنین.</p><p>در «چقدر منو بلدی؟» اول نفرِ نوبت‌دار جواب طرف مقابل رو حدس می‌زنه، بعد جواب واقعی رو می‌شنوه.</p><p>۱۲ نوبت بازی دارین؛ هر نوبت برای یه نفره. هر کارتی رو هم خواستین رد کنین.</p></div></dialog>
+  <dialog id="helpDialog" class="modal" aria-labelledby="helpTitle"><div class="modal-head"><h2 id="helpTitle">قانونش خیلی ساده‌ست ♡</h2><button type="button" class="modal-close" data-close="helpDialog" aria-label="بستن">×</button></div><div class="modal-body help-short"><p>هر نوبت نوبتِ یکی از شماست؛ بین دسته‌ها بچرخین و کارت دلخواه رو انتخاب کنین.</p><p>هر دسته توی یک نوبت همون کارت رو نگه می‌داره؛ فقط «یه کارت دیگه» عوضش می‌کنه. کارت‌های فقط دیده‌شده مصرف نمی‌شن.</p><p>در «چقدر منو بلدی؟» اول حدس بزن، بعد جواب واقعی رو بشنو. بازی ۱۸ نوبته‌ست و آخرش می‌تونین ۴ نوبت اضافه کنین.</p></div></dialog>
   <dialog id="favoritesDialog" class="modal" aria-labelledby="favoritesTitle"><div class="modal-head"><h2 id="favoritesTitle">کارت‌های محبوب ♡</h2><button type="button" class="modal-close" data-close="favoritesDialog" aria-label="بستن">×</button></div><div id="favoritesList" class="favorites-list modal-body"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <script>
@@ -203,8 +203,8 @@ window.LOVE_CARDS = [
   const byId = new Map(cards.map(card => [card.id, card]));
   const GAME_KEY = 'do-sal-ma:session:v2';
   const FAVORITES_KEY = 'do-sal-ma:favorites:v2';
-  const START_TURNS = 12;
-  const MAX_TURNS = 20;
+  const START_TURNS = 18;
+  const MAX_TURNS = 30;
   const fa = value => Number(value).toLocaleString('fa-IR');
   let session = null;
   let favorites = readJson(FAVORITES_KEY, []);
@@ -220,13 +220,24 @@ window.LOVE_CARDS = [
   function save() {if (session) saveJson(GAME_KEY, session)}
   function load() {
     const data = readJson(GAME_KEY, null);
-    if (!data || data.version !== 2 || !Array.isArray(data.players) || data.players.length !== 2 ||
+    if (!data || ![2, 3].includes(data.version) || !Array.isArray(data.players) || data.players.length !== 2 ||
         !Array.isArray(data.done) || !Array.isArray(data.seen) ||
-        !data.done.every(entry => byId.has(entry.id)) || !data.seen.every(id => byId.has(id)) ||
+        !data.done.every(entry => entry && byId.has(entry.id)) ||
         (data.current && !byId.has(data.current)) || !Number.isInteger(data.target)) return null;
-    data.target = Math.max(START_TURNS, Math.min(MAX_TURNS, data.target));
+    // نسخهٔ قبلی، دیدن یک کارت را هم مصرف‌شده حساب می‌کرد. تنها کارت‌های بازی‌شده را نگه می‌داریم.
+    data.version = 3;
     data.players = data.players.map((name, i) => String(name || (i ? 'تو' : 'من')).slice(0, 20));
-    data.seen = [...new Set(data.seen)];
+    data.target = Math.max(START_TURNS, Math.min(MAX_TURNS, data.target));
+    data.seen = [...new Set(data.done.filter(entry => entry.result !== 'skip').map(entry => entry.id))];
+    data.offers = Object.fromEntries(Object.entries(data.offers || {}).filter(([type, id]) =>
+      types[type] && byId.get(id)?.type === type && !data.seen.includes(id)));
+    if (data.current && !data.seen.includes(data.current))
+      data.offers[byId.get(data.current).type] = data.current;
+    else data.current = null;
+    data.roundSkipped = [...new Set((Array.isArray(data.roundSkipped) ? data.roundSkipped : [])
+      .filter(id => byId.has(id) && !data.seen.includes(id) && !Object.values(data.offers).includes(id)))];
+    data.lastOffers = Object.fromEntries(Object.entries(data.lastOffers || {}).filter(([type, id]) =>
+      types[type] && byId.get(id)?.type === type));
     data.stars = Math.max(0, Number(data.stars) || 0);
     data.missions = Math.max(0, Number(data.missions) || 0);
     data.ended = Boolean(data.ended);
@@ -271,26 +282,43 @@ window.LOVE_CARDS = [
       $('playerOne').value.trim().slice(0, 20) || 'من',
       $('playerTwo').value.trim().slice(0, 20) || 'تو'
     ];
-    session = {version:2, players:names, target:START_TURNS, done:[], seen:[], current:null,
+    session = {version:3, players:names, target:START_TURNS, done:[], seen:[], current:null,
+               offers:{}, roundSkipped:[], lastOffers:{},
                stars:0, missions:0, ended:false, startedAt:Date.now()};
     save();
     showView('game');
   }
-  function draw(type) {
-    if (!session || isFinished()) return;
-    const available = cards.filter(c => c.type === type && !session.seen.includes(c.id));
-    if (!available.length) {toast('این دسته دیگه کارت نداره ♡'); return}
-    const card = available[Math.floor(Math.random() * available.length)];
+  function candidatesFor(type, replacing = false) {
+    const current = session.offers[type];
+    return cards.filter(c => c.type === type && !session.seen.includes(c.id) &&
+      !session.roundSkipped.includes(c.id) && (!replacing || c.id !== current));
+  }
+  function draw(type, replacing = false) {
+    if (!session || isFinished() || !types[type]) return;
+    // انتخاب مجدد همان دسته، کارتِ دیده‌شدهٔ همین نوبت را نشان می‌دهد.
+    if (!replacing && session.offers[type]) {
+      session.current = session.offers[type];
+      save(); renderGame();
+      return;
+    }
+    const available = candidatesFor(type, replacing);
+    if (!available.length) {
+      toast(replacing ? 'کارت تازه‌ای توی این دسته نمونده ♡' : 'این دسته دیگه کارت نداره ♡');
+      return;
+    }
+    // کارت‌های نوبت قبلی فقط در صورت کمبود سؤال دوباره پیشنهاد می‌شوند.
+    const fresh = available.filter(c => c.id !== session.lastOffers[type]);
+    const pool = fresh.length ? fresh : available;
+    const card = pool[Math.floor(Math.random() * pool.length)];
+    if (replacing && session.offers[type]) session.roundSkipped.push(session.offers[type]);
+    session.offers[type] = card.id;
     session.current = card.id;
-    session.seen.push(card.id);
-    save();
-    renderGame(true);
+    save(); renderGame(true);
   }
   function redraw() {
     const card = currentCard();
     if (!card) return;
-    if (hasRemaining(card.type)) draw(card.type);
-    else toast('این دسته تموم شد؛ یه دستهٔ دیگه بزن');
+    draw(card.type, true);
   }
   function renderCategories() {
     const picker = $('categoryPicker');
@@ -298,16 +326,18 @@ window.LOVE_CARDS = [
     Object.entries(types).forEach(([type, meta]) => {
       const button = document.createElement('button');
       const remaining = cards.filter(c => c.type === type && !session.seen.includes(c.id)).length;
+      const visited = Boolean(session.offers[type]);
+      const selected = currentCard()?.type === type;
       button.type = 'button';
-      button.className = 'category-choice category-' + type + (currentCard()?.type === type ? ' is-selected' : '');
-      button.disabled = remaining === 0 && currentCard()?.type !== type;
-      button.setAttribute('aria-pressed', String(currentCard()?.type === type));
-      button.setAttribute('aria-label', meta.title + (remaining ? '' : '، بدون کارت تازه'));
+      button.className = 'category-choice category-' + type + (selected ? ' is-selected' : '') + (visited ? ' is-visited' : '');
+      button.disabled = remaining === 0 && !visited;
+      button.setAttribute('aria-pressed', String(selected));
+      button.setAttribute('aria-label', meta.title + (visited ? '، کارت قبلی این نوبت' : remaining ? '' : '، بدون کارت تازه'));
       const glyph = document.createElement('span'); glyph.className = 'choice-glyph'; glyph.textContent = meta.emoji;
       const label = document.createElement('span'); label.textContent = meta.title;
       button.append(glyph, label);
       button.addEventListener('click', () => {
-        if (currentCard()?.type === type) return;
+        if (selected) return;
         draw(type);
       });
       picker.append(button);
@@ -336,8 +366,8 @@ window.LOVE_CARDS = [
     $('regularControls').hidden = card.type === 'guess' || card.type === 'mission';
     $('guessControls').hidden = card.type !== 'guess';
     $('missionControls').hidden = card.type !== 'mission';
-    $('redrawBtn').disabled = !hasRemaining(card.type);
-    $('redrawBtn').title = hasRemaining(card.type) ? '' : 'کارت‌های این دسته تموم شده';
+    $('redrawBtn').disabled = candidatesFor(card.type, true).length === 0;
+    $('redrawBtn').title = $('redrawBtn').disabled ? 'کارت تازه‌ای توی این دسته نمونده' : '';
     $('favoriteCurrentBtn').classList.toggle('is-fav', favorites.includes(card.id));
     $('favoriteCurrentBtn').textContent = favorites.includes(card.id) ? '♥' : '♡';
     if (animate) {
@@ -353,6 +383,11 @@ window.LOVE_CARDS = [
     if (card.type === 'guess' && result === 'hit') session.stars++;
     if (card.type === 'mission' && result === 'done') session.missions++;
     session.done.push({id:card.id, who:whoseTurn(), result});
+    // تنها کارتِ انتخاب‌شده و انجام‌شده مصرف می‌شود؛ سایر پیش‌نمایش‌ها برمی‌گردند.
+    if (result !== 'skip' && !session.seen.includes(card.id)) session.seen.push(card.id);
+    session.lastOffers = {...session.offers};
+    session.offers = {};
+    session.roundSkipped = [];
     session.current = null;
     save();
     showView(isFinished() ? 'ending' : 'game');
@@ -448,6 +483,7 @@ window.LOVE_CARDS = [
   }
   function init() {
     session=load();
+    if (session) save(); // ذخیرهٔ به‌روزرسانی سشن نسخهٔ قدیمی
     bind(); updateFavoritesCount(); showView('home');
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
       window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
