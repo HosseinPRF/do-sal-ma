@@ -15,9 +15,59 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
-  <script src="./cards.js" defer></script>
-  <script src="./app.js" defer></script>
+  <style>
+:root{
+  --bg:#170e22;--bg-deep:#100b19;--surface:#25172f;--surface-2:#30213b;
+  --text:#fff7f4;--muted:#cbbacb;--subtle:#97859f;--line:rgba(255,231,230,.13);
+  --rose:#ffb9c5;--rose-dark:#df879f;--peach:#ffcbac;--lavender:#cbb2fc;
+  --gold:#f4d8a8;--mint:#a5dacb;--grad:linear-gradient(110deg,#ffe0ce 0%,#ffb7c7 47%,#d9b5ff 100%);
+  --font:'Vazirmatn',Tahoma,Arial,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.8;min-height:100vh;-webkit-font-smoothing:antialiased}body:has(dialog[open]){overflow:hidden}
+button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a,button,input,textarea{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--rose);outline-offset:3px}[hidden]{display:none!important}::selection{background:#ffb9c5;color:#241428}
+.background-art{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1;background:radial-gradient(ellipse 65% 45% at 78% 8%,rgba(93,47,101,.22),transparent 75%),radial-gradient(ellipse 40% 70% at 5% 85%,rgba(102,44,72,.12),transparent 85%),#170e22}.glow{position:absolute;display:block;border-radius:50%;filter:blur(78px);opacity:.52}.glow-a{width:480px;height:480px;background:#582b62;top:-280px;right:-120px}.glow-b{width:440px;height:440px;background:#66365a;left:-300px;top:35%}.glow-c{width:380px;height:380px;background:#4e385d;right:5%;bottom:-300px}.dot{position:absolute;width:4px;height:4px;border-radius:50%;background:#f5d3c4;opacity:.5;box-shadow:0 0 15px #e9c3d2}.dot-1{top:17%;left:13%}.dot-2{top:32%;right:22%}.dot-3{top:73%;left:24%}.dot-4{top:85%;right:9%}
+.app-shell{width:min(1160px,calc(100% - 52px));margin:0 auto;min-height:100vh;display:flex;flex-direction:column}.site-header{display:flex;align-items:center;justify-content:space-between;height:98px;border-bottom:1px solid var(--line);position:relative;z-index:2}.brand{display:flex;align-items:center;gap:13px}.brand-icon{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,#553244,#3d254d);display:grid;place-items:center;color:#f6bcc3;font-size:28px;line-height:1;box-shadow:0 8px 28px #10091348,inset 0 0 0 1px rgba(252,195,205,.2)}.brand-text{display:flex;flex-direction:column;line-height:1.45}.brand-text strong{font-weight:800;font-size:18px}.brand-text small{font-size:10px;color:#d0b3ce;letter-spacing:.04em;margin-top:5px}.header-actions{display:flex;align-items:center;gap:15px}.header-link{display:flex;align-items:center;gap:8px;border:0;background:none;color:#e1cedd;font-size:13px;padding:10px 11px;border-radius:14px;transition:.2s;position:relative}.header-link:hover{background:rgba(255,255,255,.08);color:#fff}.header-link>span:first-child{font-size:23px;line-height:1}.header-link .icon-text{font-weight:800;font-size:22px!important}.tiny-bubble{position:absolute;top:0;right:0;font-size:10px;width:15px;height:15px;background:var(--rose);color:#25162b;border-radius:50%;line-height:15px;text-align:center;font-weight:700}.site-footer{margin-top:auto;min-height:84px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);color:#a38ba8;font-size:11px;gap:14px}.site-footer span:first-child{color:#e3bfce}
+.view{animation:fadeIn .45s ease both} @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.home-view{padding-top:69px}.home-grid{min-height:515px;display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:30px}.hero-copy{padding-bottom:25px}.eyebrow{color:var(--rose);display:inline-flex;gap:13px;align-items:center;font-weight:600;letter-spacing:.02em;font-size:12px}.eyebrow-dot{font-size:11px;color:var(--gold)}h1,h2,h3,p{margin-top:0}.hero-copy h1{font-size:clamp(52px,6.2vw,83px);letter-spacing:-.04em;line-height:1.35;margin:17px 0 20px;font-weight:900}.gradient-text{background:var(--grad);background-clip:text;-webkit-background-clip:text;color:transparent}.headline-heart{font-size:.42em;color:#ffb2c6;vertical-align:middle;padding-right:14px;display:inline-block;transform:rotate(-16deg)}.hero-lead{color:#d2c1d3;font-size:15px;max-width:530px;line-height:2.35;margin-bottom:20px}.pill-row{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0 28px}.soft-pill{display:inline-flex;padding:5px 13px;border-radius:50px;border:1px solid #ffffff1a;background:rgba(255,255,255,.04);font-size:12px;color:#ecdbec}.hero-buttons{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:1px solid transparent;border-radius:15px;font-weight:800;font-size:13px;line-height:1.5;min-height:49px;padding:13px 21px;transition:transform .16s,box-shadow .16s,background .16s}.btn:not(:disabled):active{transform:scale(.97)}.btn-primary{background:linear-gradient(110deg,#ffe1cc,#f9b9c7 59%,#e5bbec);color:#301b30;box-shadow:0 10px 32px #c9799a24}.btn-primary:hover{box-shadow:0 12px 39px #e6a2c047;filter:brightness(1.035)}.btn-outline{background:#ffffff04;color:#f8e7ed;border-color:#f4cbd14b}.btn-outline:hover{background:#ffffff0d}.btn-ghost{background:#ffffff09;color:#e9d7e7;border-color:#ffffff1a}.btn-ghost:hover{background:#ffffff14}.btn-large{min-height:56px;padding:15px 27px;font-size:14px}.btn-full{width:100%}.btn-arrow{font-size:21px;line-height:0}.hero-note{display:flex;align-items:center;gap:9px;font-size:11px;color:#aa91aa;margin-top:19px}.hero-note span{color:#dfaecc}
+.hero-art{height:510px;position:relative;isolation:isolate;display:grid;place-items:center}.orbit{position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid rgba(233,163,196,.18);transform:translate(-50%,-50%);z-index:-1}.orbit-one{width:430px;height:430px}.orbit-two{width:335px;height:335px;border-style:dashed;border-color:rgba(251,223,229,.14)}.hero-art:before{content:"";position:absolute;background:radial-gradient(circle,#ae5a8480 0%,#ad5d7644 35%,transparent 72%);width:520px;height:520px;z-index:-2;filter:blur(30px)}.art-card{width:252px;height:360px;border-radius:25px;position:absolute;box-shadow:0 30px 58px #0805098a;border:1px solid #ffffff48;display:flex;flex-direction:column}.art-card-back{background:linear-gradient(155deg,#744759,#40274a 70%);transform:rotate(14deg) translate(-18px,-8px);padding:25px;align-items:center;justify-content:space-between}.art-card-small{font-family:Georgia,serif;align-self:flex-start;color:#f3cfd4a6;font-size:11px;letter-spacing:.2em}.art-card-back-center{text-align:center;font-family:Georgia,serif;font-size:36px;letter-spacing:.15em;line-height:1.2;color:#f4bfd475}.art-card-bottom{font-size:19px;color:#ffd6d67d;letter-spacing:5px}.art-card-front{background:radial-gradient(ellipse at 60% 30%,#b27185,#71435d 58%,#4d2e51 100%);transform:rotate(-9deg) translate(32px,5px);padding:22px 23px;justify-content:space-between;overflow:hidden;box-shadow:0 40px 75px #080509aa,inset 0 0 0 8px #fff1ed08}.art-card-front:after{content:"";position:absolute;inset:11px;border:1px solid rgba(255,232,219,.31);border-radius:17px;pointer-events:none}.art-eyebrow{font-family:Georgia,serif;font-size:10px;letter-spacing:.18em;text-align:center;direction:ltr;color:#ffdee0}.art-hearts{position:relative;height:145px}.heart-outline{position:absolute;font-size:177px;font-family:Arial,sans-serif;font-weight:300;line-height:1;color:#ffe1d5;filter:drop-shadow(0 6px 6px #5b324357)}.heart-outline-one{right:5px;top:-20px;transform:rotate(-9deg)}.heart-outline-two{right:65px;top:7px;transform:rotate(14deg) scale(.81);color:#efb8e9;opacity:.87}.art-mini-star{position:absolute;font-size:25px;top:16px;left:28px;color:#ffead7}.art-text{text-align:center;font-size:19px;color:#fcece6;line-height:1.9;font-weight:500;margin-top:-12px}.art-text strong{font-size:32px;font-weight:900;color:#ffeadb}.art-footer{display:flex;justify-content:space-between;font-size:12px;color:#ffdfd8;padding:0 8px}.art-footer span:last-child{font-size:30px;font-family:Georgia;line-height:1}.floating-spark{position:absolute;color:#f7c6d1;font-size:28px;animation:twinkle 4s ease-in-out infinite}.spark-1{right:45px;top:52px}.spark-2{left:22px;bottom:90px;animation-delay:1.2s;font-size:35px}.spark-3{right:35px;bottom:55px;animation-delay:2s;color:#efc993}.orbit-caption{position:absolute;font-size:11px;color:#ebc5d8;letter-spacing:.02em}.orbit-caption-a{top:72px;left:55px;transform:rotate(-14deg)}.orbit-caption-b{bottom:53px;right:82px;transform:rotate(11deg)}@keyframes twinkle{0%,100%{opacity:.45;transform:scale(.8)}50%{opacity:1;transform:scale(1.13)}}
+.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:40px 0 55px}.feature{display:flex;align-items:center;gap:15px;border-top:1px solid var(--line);padding-top:21px}.feature-icon{height:43px;width:43px;flex-shrink:0;border-radius:13px;background:rgba(242,167,196,.09);border:1px solid #f7d1d328;color:#f6bfce;display:grid;place-items:center;font-size:21px}.feature strong,.feature small{display:block}.feature strong{font-size:13px;color:#fff2f1}.feature small{font-size:11px;color:#a998b0;margin-top:2px}
+.small-page-header,.game-heading-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#ad98b2;padding-top:35px}.back-link,.subtle-text-btn{border:none;background:transparent;color:#e0b9cf;padding:8px 2px;font-size:13px}.back-link:hover,.subtle-text-btn:hover{color:#fff}.section-heading{text-align:center;margin:38px auto 28px}.section-overline,.end-badge{color:#ecc0d0;font-size:10px;letter-spacing:.15em;font-family:Georgia,serif;direction:ltr}.section-heading h1{font-size:31px;margin:10px 0 2px;line-height:1.6}.section-heading p{font-size:13px;color:#bba8c0}.setup-card{max-width:700px;padding:35px 40px 30px;margin:0 auto 85px;border:1px solid rgba(252,213,226,.19);border-radius:27px;background:linear-gradient(145deg,#302038bf,#22152eeb);box-shadow:0 30px 90px #06040a33}.form-section-number{color:#e7b7ca;font-size:12px;font-weight:700;margin-bottom:17px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:9px;color:#f1dfef;font-size:12px;font-weight:600}.label-emoji{color:#e6a1b7}.field input,.field textarea{min-width:0;width:100%;border:1px solid #f3d2e028;background:#140d1f80;color:#fff;border-radius:13px;padding:13px 16px;outline:none;transition:.2s;font-size:14px;resize:vertical}.field input:focus,.field textarea:focus{border-color:#f3b4c5a8;box-shadow:0 0 0 3px #eea6c414}.field input::placeholder,.field textarea::placeholder{color:#89778f}.sep-line{height:1px;background:var(--line);margin:28px 0}.length-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.length-option{position:relative;cursor:pointer}.length-option>input{position:absolute;opacity:0;inset:0}.length-content{display:flex;flex-direction:column;gap:6px;min-height:92px;justify-content:center;border:1px solid #ffffff1e;border-radius:15px;padding:14px 12px;background:#ffffff06;text-align:center;transition:.2s}.length-content strong{font-size:13px}.length-content>span{font-size:10px;color:#b2a0b7}.length-option input:checked~.length-content{background:#d49caf17;border-color:#f3b6cc9c;box-shadow:inset 0 0 0 1px #f5bdd03e}.length-option input:focus-visible~.length-content{outline:2px solid var(--rose);outline-offset:2px}.length-check{display:none;position:absolute;left:9px;top:5px;font-size:11px;color:#ffcfda}.length-option input:checked~.length-check{display:block}.adult-option{display:flex;justify-content:space-between;align-items:center;gap:20px;border-radius:14px;background:#ffffff07;border:1px solid #ffffff1c;padding:17px 16px;cursor:pointer}.adult-toggle-copy{display:flex;flex-direction:column;gap:3px}.adult-toggle-copy strong{font-size:14px}.adult-toggle-copy strong span{color:#f5bcce}.adult-toggle-copy small{font-size:11px;color:#b6a3bc}.switch{flex-shrink:0;position:relative;width:47px;height:27px}.switch input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;z-index:1}.switch-track{position:absolute;inset:0;border-radius:50px;background:#74677d;transition:.2s}.switch-track:after{content:"";width:19px;height:19px;top:4px;right:4px;border-radius:50%;position:absolute;background:white;transition:.2s}.switch input:checked+.switch-track{background:#d88da7}.switch input:checked+.switch-track:after{transform:translateX(-20px)}.switch input:focus-visible+.switch-track{outline:2px solid #fff;outline-offset:3px}.consent-panel{background:#120d1a77;border-radius:13px;padding:13px 17px;margin-top:10px;font-size:11px;color:#cebdcf}.consent-panel p{margin-bottom:10px}.consent-line{display:flex;gap:9px;align-items:flex-start;padding:3px 0;cursor:pointer}.consent-line input{accent-color:#eab2cb;width:16px;height:16px;flex-shrink:0}.form-error{color:#ffc1c1;font-size:12px;margin:14px 0}.btn-start{margin-top:28px;min-height:57px}.btn-start span{font-size:18px}.setup-footnote{text-align:center;font-size:10px;color:#a48faa;margin:15px 0 0}
+.game-heading-row{padding-top:28px}.game-mini-title{font-size:12px;color:#e8dbe8;font-weight:600}.game-mini-title span{color:var(--rose)}.chapter-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:27px 0 32px}.chapter-step{display:flex;flex-direction:column;gap:8px;opacity:.55;transition:.25s;min-width:0}.chapter-step.is-current,.chapter-step.is-done{opacity:1}.chapter-step-top{display:flex;gap:7px;align-items:center;justify-content:flex-start}.chapter-step-number{font-size:10px;color:#e9adca}.chapter-step-title{font-size:10px;color:#e7d0de;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chapter-track{height:5px;border-radius:99px;background:#6a4c694f;overflow:hidden}.chapter-track>span{display:block;height:100%;background:var(--grad);width:0%;border-radius:inherit;transition:width .35s}.game-grid{display:grid;grid-template-columns:minmax(0,1fr) 294px;gap:32px;padding-bottom:72px}.game-center{max-width:690px;width:100%;margin:0 auto}.card-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.turn-indicator{font-size:12px;color:#f0d3e2;display:flex;align-items:center;gap:10px}.pulse-dot{width:8px;height:8px;border-radius:50%;background:#f7bcca;box-shadow:0 0 0 5px #e4a0b915}.card-counter{font-size:11px;color:#ae9ab0;direction:rtl}.game-card-wrap{perspective:1100px}.game-card{--card-main:#bd708d;--card-glow:#eeb3b3;min-height:430px;border-radius:25px;border:1px solid #fff5ed4a;background:radial-gradient(circle at 24% 16%,#ffffff13 0,transparent 42%),radial-gradient(circle at 78% 80%,var(--card-glow) -60%,transparent 61%),linear-gradient(135deg,#4d304d,#422c4a 42%,#30213b);box-shadow:0 29px 52px #1008178c,0 3px 0 1px #ffffff0b inset;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:27px 34px 25px;isolation:isolate}.game-card:after{content:"";position:absolute;inset:11px;border:1px solid #fff8eb1b;border-radius:16px;z-index:-1}.game-card:before{content:"";position:absolute;height:300px;width:300px;left:-120px;top:-110px;border:2px solid #ffffff14;border-radius:50%;z-index:-1}.accent-peach{--card-main:#edb3a9;--card-glow:#d5757c}.accent-lavender{--card-main:#ceb3ff;--card-glow:#8056ae}.accent-gold{--card-main:#f1d6a6;--card-glow:#947749}.accent-rose{--card-main:#ffc0d0;--card-glow:#b85078}.accent-mint{--card-main:#b4e8d6;--card-glow:#43877e}.accent-coral{--card-main:#ffc19f;--card-glow:#c56665}.accent-plum{--card-main:#edc1ff;--card-glow:#853a99}.card-inner-decor i{position:absolute;width:21px;height:21px;opacity:.58}.decor-one{top:21px;right:20px;border-top:1px solid #f8d5ce;border-right:1px solid #f8d5ce;border-radius:0 9px 0 0}.decor-two{top:21px;left:20px;border-top:1px solid #f8d5ce;border-left:1px solid #f8d5ce;border-radius:9px 0 0 0}.decor-three{bottom:20px;right:20px;border-bottom:1px solid #f8d5ce;border-right:1px solid #f8d5ce;border-radius:0 0 9px 0}.decor-four{bottom:20px;left:20px;border-bottom:1px solid #f8d5ce;border-left:1px solid #f8d5ce;border-radius:0 0 0 9px}.card-header,.card-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}.card-type{border-radius:40px;border:1px solid #fff3e359;font-size:11px;font-weight:700;color:#ffe6df;padding:4px 15px;background:#ffffff0f}.card-num{font-size:11px;color:#e1c7d5;font-family:Georgia,serif;direction:ltr;letter-spacing:.09em}.card-body{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:19px 0 18px;flex:1}.card-glyph{color:var(--card-main);font-size:38px;margin:8px 0 15px;text-shadow:0 0 24px #fff5e533}.card-body h2{font-size:clamp(21px,2.5vw,29px);line-height:2;font-weight:800;max-width:520px;margin:0;color:#fff6f0;text-wrap:balance}.card-subtitle{font-size:11px;color:#d9c0d5;margin:16px 0 0}.card-footer{border-top:1px solid #ffffff1f;padding-top:16px;color:#edd4df;font-size:11px}.heart-stamp{font-size:28px;line-height:1;color:#edb9c9}.card-fresh{animation:dealCard .38s cubic-bezier(.18,.77,.42,1.1)}@keyframes dealCard{from{transform:translateY(12px) rotate(-1.3deg) scale(.97);opacity:.35}to{transform:translateY(0) rotate(0) scale(1);opacity:1}}.card-under{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:61px}.tiny-hint{font-size:11px;color:#b6a0b7;line-height:1.8;max-width:calc(100% - 90px)}.icon-buttons{display:flex;align-items:center;gap:7px}.icon-action{width:36px;height:36px;border:1px solid #ffffff1d;background:#ffffff07;border-radius:12px;color:#d8b7cb;font-size:23px;line-height:1;display:grid;place-items:center;transition:.2s}.icon-action:hover,.icon-action.is-fav{background:#e7a5c11a;color:#ffd5da;border-color:#e6a2ba69}.icon-action.is-fav{color:#ffc1d3}.card-controls{display:grid;grid-template-columns:1fr 1.6fr;gap:11px}.btn-next{font-size:14px}.game-card-smallprint{font-size:10px;color:#99859f;text-align:center;padding-top:19px}.score-sidebar{display:flex;flex-direction:column;gap:17px}.sidebar-panel{border:1px solid #ffffff20;border-radius:21px;padding:22px 20px;background:linear-gradient(150deg,#36223d80,#24192f9e)}.sidebar-overline{font:9px Georgia,serif;letter-spacing:.1em;color:#d9a8c5;direction:ltr;text-align:right}.sidebar-panel h3{font-size:15px;font-weight:800;margin:7px 0 20px}.sidebar-panel h3 span{color:#f9bfd1}.score-players{display:flex;flex-direction:column;gap:15px}.score-player{display:flex;align-items:center;gap:9px;min-width:0}.avatar{width:37px;height:37px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#d79ab6,#755078);color:#281a2d;font-size:19px}.avatar-two{background:linear-gradient(135deg,#b7a2e1,#8b669d);font-size:16px}.score-player div{min-width:0;flex:1}.score-player div span,.score-player div small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.score-player div span{font-size:12px;font-weight:700}.score-player div small{font-size:10px;color:#ac98af}.score-player>strong{color:#ffe2dd;font-size:22px;font-weight:900;min-width:20px;text-align:left}.bond-row{border-top:1px solid var(--line);margin-top:22px;padding-top:15px}.bond-row>div:first-child{display:flex;align-items:center;justify-content:space-between}.bond-label{font-size:10px;color:#b9a1b8}.bond-row strong{font-size:13px;color:#ffc3d0}.bond-bar{margin-top:10px;background:#ffffff1c;height:6px;border-radius:20px;overflow:hidden}.bond-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#f6c3b3,#e59aca);border-radius:20px;transition:.3s}.stat-row{display:flex;justify-content:space-between;align-items:center;margin-top:17px;font-size:11px;color:#ae9db6}.stat-row strong{color:#f5e4e9}.chapter-info{padding-top:18px;padding-bottom:19px}.chapter-top{display:flex;justify-content:space-between}.chapter-overline{font-size:10px;color:#cba9c1}.little-star{color:#eec7a9}.chapter-info>strong{display:block;font-size:16px;margin:5px 0}.chapter-info p{font-size:11px;color:#b3a0b8;margin-bottom:12px}.chapter-progress{height:4px;background:#ffffff1a;border-radius:20px;overflow:hidden}.chapter-progress>span{height:100%;width:0;background:#e7b1cc;border-radius:20px;display:block;transition:.3s}.sidebar-quote{text-align:center;font-size:11px;line-height:2.2;color:#a995ad;padding:10px 16px}.sidebar-quote span{color:#e7accc;font-size:17px}
+.modal{width:min(510px,calc(100% - 28px));max-height:min(84vh,760px);padding:0;border-radius:22px;border:1px solid #fff1e53d;color:var(--text);background:#291b35;box-shadow:0 50px 150px #050208b9;overscroll-behavior:contain}.modal::backdrop{background:rgba(12,7,18,.76);backdrop-filter:blur(8px)}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:21px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#291b35;z-index:1}.modal-head h2{font-size:18px;margin:0}.modal-head h2 span{color:#f5bfd0}.modal-close{width:34px;height:34px;background:#ffffff0c;color:#f7d8e9;border:0;font-size:23px;border-radius:10px}.modal-body{padding:18px 24px 23px}.modal-lead{font-size:12px;color:#d7c4d6}.help-item{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--line)}.help-icon{display:grid;place-items:center;width:30px;height:30px;flex-shrink:0;border-radius:11px;background:#efa9cd1b;color:#f9bfd0;font-size:16px}.help-item strong{font-size:12px}.help-item p{font-size:11px;color:#bca9c2;margin:4px 0 0}.help-note{background:#ffffff08;padding:11px 14px;border-radius:10px;font-size:11px;color:#bfaebe;margin:19px 0 0}.favorites-list{display:flex;flex-direction:column;gap:9px;max-height:62vh;overflow:auto}.fav-entry{padding:15px 16px;border:1px solid var(--line);border-radius:12px;background:#ffffff06}.fav-entry-header{display:flex;align-items:center;justify-content:space-between;gap:10px}.fav-entry-header strong{color:#f8c6d2;font-size:11px}.fav-entry p{font-size:12px;margin:7px 0 0;line-height:1.9}.fav-remove{background:none;border:0;color:#bfa0b6;font-size:11px;text-decoration:underline}.empty-fav{color:#bfadbf;text-align:center;font-size:13px;padding:18px}.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);z-index:20;opacity:0;pointer-events:none;background:#edb9c9;color:#29192c;border:1px solid #ffe3dc;border-radius:15px;box-shadow:0 15px 45px #0c061b65;padding:12px 22px;font-size:12px;font-weight:800;transition:.25s;max-width:calc(100% - 30px);text-align:center}.toast.show{transform:translate(-50%,0);opacity:1}
+.ending-view{max-width:720px;margin:0 auto;padding:46px 0 75px;text-align:center}.end-confetti{font-size:24px;letter-spacing:20px;color:#d9a4c0;opacity:.78;animation:twinkle 4s infinite}.ending-header{margin:22px 0}.end-large-heart{font-size:64px;color:#f5b7c9;text-shadow:0 0 45px #e18bab80;line-height:1.4}.ending-header h1{font-size:clamp(31px,5vw,50px);line-height:1.6;margin:5px 0}.ending-header p{color:#c2b0c6;font-size:13px}.ending-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px auto}.ending-stats>div{background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:18px 10px}.ending-stats strong,.ending-stats span{display:block}.ending-stats strong{font-size:27px;color:#ffccd4}.ending-stats span{font-size:11px;color:#ac9aaf}.wish-card{text-align:right;padding:25px 30px;background:linear-gradient(120deg,#32203f,#25192e);border:1px solid #f8d4e02b;border-radius:24px}.wish-heading{display:flex;align-items:flex-start;gap:13px;margin-bottom:22px}.wish-heading>span{font-size:27px}.wish-heading strong{font-size:17px}.wish-heading p{color:#bfaabd;font-size:11px;margin:3px 0 0}.wish-card .field{margin-bottom:17px}.wish-card .btn{margin-top:6px}.ending-buttons{margin-top:20px;display:flex;justify-content:center;gap:12px}
+@media(max-width:960px){.home-grid{grid-template-columns:1fr .85fr;gap:0}.hero-copy h1{font-size:clamp(49px,7.3vw,70px)}.hero-art{transform:scale(.82);transform-origin:center center}.game-grid{grid-template-columns:minmax(0,1fr) 230px;gap:22px}.game-card{min-height:430px}.score-sidebar .sidebar-panel{padding:18px 15px}}
+@media(max-width:720px){.app-shell{width:min(100% - 34px,520px)}.site-header{height:73px}.brand-icon{width:39px;height:39px;border-radius:13px}.brand-text strong{font-size:15px}.brand-text small{font-size:9px}.desktop-only{display:none}.header-actions{gap:7px}.header-link{padding:7px 9px}.home-view{padding-top:22px}.home-grid{display:flex;flex-direction:column-reverse;gap:2px}.hero-art{height:290px;width:100%;transform:scale(.63);margin:-67px 0 -48px;flex-shrink:0}.hero-copy{text-align:center;padding-bottom:0}.hero-copy h1{font-size:52px;line-height:1.35;margin:6px 0 10px}.headline-heart{padding-right:8px}.hero-lead{font-size:12px;line-height:2.1;max-width:460px;margin:0 auto}.pill-row{justify-content:center;margin:15px 0 20px;gap:7px}.soft-pill{font-size:10px;padding:5px 10px}.hero-buttons{justify-content:center}.btn-large{padding:13px 21px;min-height:52px}.hero-note{justify-content:center;font-size:10px;margin:17px auto 0;max-width:350px}.feature-row{grid-template-columns:1fr;gap:14px;padding:30px 0 36px}.feature{padding:0 0 0 4px;border:0}.feature-icon{height:38px;width:38px}.feature strong{font-size:12px}.feature small{font-size:10px}.site-footer{min-height:74px;flex-direction:column;justify-content:center;gap:0;padding:10px 0;text-align:center;font-size:10px}.small-page-header{padding-top:20px}.section-heading{margin:27px auto 22px}.section-heading h1{font-size:25px}.section-heading p{font-size:11px}.setup-card{padding:23px 18px 25px;border-radius:21px;margin-bottom:55px}.field-grid{gap:10px}.field input{padding:11px 10px;font-size:13px}.length-selector{gap:6px}.length-content{padding:13px 4px;min-height:95px}.length-content strong{font-size:11px}.length-content>span{font-size:9px}.adult-option{padding:13px 11px}.adult-toggle-copy strong{font-size:12px}.adult-toggle-copy small{font-size:10px}.game-heading-row{padding-top:17px}.game-mini-title{font-size:11px}.subtle-text-btn,.back-link{font-size:11px}.chapter-rail{gap:6px;margin:15px 0 20px}.chapter-step-title{font-size:9px}.chapter-step-number{font-size:9px}.game-grid{display:flex;flex-direction:column;gap:24px;padding-bottom:45px}.game-center{max-width:none}.card-toolbar{margin-bottom:10px}.game-card{min-height:440px;padding:22px 21px 21px;border-radius:23px}.card-body{padding:14px 1px}.card-glyph{font-size:33px;margin:4px 0 17px}.card-body h2{font-size:clamp(20px,5.5vw,26px);line-height:2}.card-subtitle{font-size:10px;margin-top:14px}.card-type,.card-footer{font-size:10px}.card-num{font-size:10px}.card-under{min-height:59px}.tiny-hint{font-size:10px}.card-controls{grid-template-columns:1fr 1.55fr;gap:8px}.card-controls .btn{padding:12px 9px;font-size:11px;min-height:52px}.card-controls .btn-next{font-size:12px}.score-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:10px}.score-sidebar .sidebar-panel{padding:15px 12px;border-radius:17px}.sidebar-panel h3{font-size:12px;margin:5px 0 11px}.sidebar-overline{font-size:7px}.score-players{gap:9px}.score-player{gap:5px}.avatar{width:29px;height:29px;font-size:14px}.score-player div span{font-size:10px}.score-player div small{font-size:8px}.score-player>strong{font-size:17px}.bond-row{margin-top:13px;padding-top:10px}.bond-label,.stat-row{font-size:9px}.bond-row strong{font-size:11px}.chapter-info>strong{font-size:13px}.chapter-info p{font-size:10px}.sidebar-quote{grid-column:span 2;font-size:10px;padding:3px 16px}.modal-head{padding:17px}.modal-body{padding:16px 17px}.ending-view{padding:24px 0 44px}.end-confetti{font-size:18px;letter-spacing:11px}.ending-header h1{font-size:35px}.ending-header p{font-size:11px}.ending-stats{gap:7px;margin:23px auto}.ending-stats>div{padding:13px 6px}.ending-stats strong{font-size:24px}.ending-stats span{font-size:10px}.wish-card{padding:20px 17px}.ending-buttons{flex-wrap:wrap}}
+@media(max-width:370px){.app-shell{width:calc(100% - 24px)}.hero-copy h1{font-size:45px}.hero-art{transform:scale(.57)}.game-card{min-height:420px}.card-body h2{font-size:19px}.length-content strong{font-size:10px}.length-content>span{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+/* v2 · بازی کم‌حرف، انتخاب آزاد در هر نوبت */
+.home-view{padding-bottom:55px}.feature-row,.hero-note{display:none}.hero-lead{max-width:450px}.site-footer{justify-content:center;min-height:62px}
+.setup-simple{max-width:590px;margin:0 auto 90px}.setup-simple .btn-start{margin-top:29px}
+.game-view{max-width:850px;margin-inline:auto}.game-heading-row{padding-top:28px}.game-main{max-width:690px;margin:auto;padding-bottom:45px}
+.compact-progress{max-width:690px;margin:15px auto 22px}.compact-progress-text{display:flex;justify-content:space-between;align-items:center;color:#edd7e5;font-size:13px;font-weight:700;gap:12px;margin-bottom:8px}.compact-progress-text span:last-child{font-size:11px;font-weight:500;color:#b6a0b7}
+.progress-track{height:5px;border-radius:20px;background:#ffffff1a;overflow:hidden}.progress-fill{height:100%;width:0;background:var(--grad);border-radius:inherit;transition:width .3s}
+.pick-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:20px 0 11px}.pick-header strong{font-size:13px}.pick-header span{color:#b8a2b8;font-size:11px}
+.category-picker{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-bottom:19px}
+.category-choice{background:linear-gradient(155deg,#37243e,#281c33);border:1px solid #fce9ee26;color:#ecdae7;min-height:90px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;gap:4px;font-size:11px;font-weight:700;line-height:1.5;transition:transform .18s,border-color .18s,background .18s;box-shadow:0 7px 16px #130c1c3d}
+.category-choice .choice-glyph{font-size:28px;line-height:1.3;color:var(--choice-color,#ffbed0)}.category-fun{--choice-color:#f4c3a6}.category-guess{--choice-color:#ceb3ff}.category-memory{--choice-color:#f1d6a6}.category-romance{--choice-color:#ffbfd2}.category-mission{--choice-color:#ffb8a4}
+.category-choice:hover:not(:disabled){transform:translateY(-2px);border-color:#ffddd263}.category-choice.is-selected{background:linear-gradient(150deg,#5c344e,#38253d);border-color:#f8c6d58c;box-shadow:0 0 0 1px #f8c6d53b inset,0 7px 16px #130c1c3d}.category-choice:disabled{opacity:.38;cursor:not-allowed}
+.empty-state{min-height:350px;border:1px dashed #f5c5d04b;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(130deg,#38243b55,#291c3355);text-align:center;padding:30px}
+.empty-heart{font-size:68px;color:#f3b8cb;line-height:1.1;text-shadow:0 0 40px #e7a7bf55;animation:float 4s ease-in-out infinite}.empty-state h2{font-size:23px;margin:8px 0 0}.empty-state p{font-size:12px;color:#bda9bf;margin:0}
+.game-card{min-height:355px}.game-card .card-body{padding:14px 0}.game-card .card-body h2{font-size:clamp(20px,2.6vw,27px);line-height:1.95}
+.game-card .card-footer{color:#ead1e0}.game-card .card-glyph{margin:0 0 12px}.game-card .heart-stamp{font-size:26px}.card-under{min-height:57px}.redraw-link{background:transparent;border:0;color:#efc1d3;padding:9px 2px;font-size:12px;font-weight:700}.redraw-link:disabled{opacity:.36;cursor:not-allowed}
+.card-controls{grid-template-columns:1fr 1.65fr}.mini-stats{display:flex;justify-content:center;align-items:center;gap:20px;color:#bdacc0;margin-top:19px;font-size:11px}.mini-stats span:first-child{color:#e3c7f0}
+.help-short p{margin:0;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;color:#e0cad9}.help-short p:last-child{border-bottom:0}
+.ending-view{padding-top:35px}.ending-header{margin:8px 0}.ending-header h1{font-size:clamp(28px,4.9vw,44px)}.end-stats-simple{margin:18px auto 28px}.wish-card{margin-top:17px}.wish-heading{margin-bottom:14px}.wish-heading strong{font-size:16px}
+@media (max-width:720px){
+  .home-view{padding-bottom:22px}.site-footer{min-height:52px}.section-heading{margin:30px auto 22px}.game-heading-row{padding-top:17px}.compact-progress{margin:13px auto 17px}.pick-header{margin:13px 0 10px}
+  .category-picker{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:17px}.category-choice{min-height:67px;border-radius:13px;padding:7px 4px;font-size:10px}.category-choice .choice-glyph{font-size:24px}.category-choice:nth-child(4),.category-choice:nth-child(5){grid-column:span 1}.category-choice:nth-child(4){grid-column:1 / 2}.category-choice:nth-child(5){grid-column:2 / 4}
+  .game-card{min-height:340px;padding:22px 23px}.card-body h2{font-size:clamp(19px,5.1vw,24px)}.empty-state{min-height:315px}.game-card .card-glyph{font-size:33px}.compact-progress-text{font-size:12px}.mini-stats{margin-top:15px}
+  .hero-copy h1{margin-top:7px}.pill-row{margin:14px 0 22px}.hero-lead{line-height:1.95}.game-main{padding-bottom:32px}.ending-view{padding-top:28px}
+}
+@media(max-width:380px){.category-choice{font-size:9.5px}.game-card{min-height:350px}.game-card .card-body h2{font-size:19px}.pick-header strong{font-size:12px}.pick-header span{font-size:10px}}
+
+  </style>
+
   <title>دو سال، یک دنیا ما ♡</title>
 </head>
 <body>
@@ -88,5 +138,324 @@
   <dialog id="helpDialog" class="modal" aria-labelledby="helpTitle"><div class="modal-head"><h2 id="helpTitle">قانونش خیلی ساده‌ست ♡</h2><button type="button" class="modal-close" data-close="helpDialog" aria-label="بستن">×</button></div><div class="modal-body help-short"><p>نوبتی یه دسته انتخاب کنین و کارت رو بخونین. خوشتون نیومد؟ «یه کارت دیگه» یا یه دستهٔ دیگه رو بزنین.</p><p>در «چقدر منو بلدی؟» اول نفرِ نوبت‌دار جواب طرف مقابل رو حدس می‌زنه، بعد جواب واقعی رو می‌شنوه.</p><p>۱۲ نوبت بازی دارین؛ هر نوبت برای یه نفره. هر کارتی رو هم خواستین رد کنین.</p></div></dialog>
   <dialog id="favoritesDialog" class="modal" aria-labelledby="favoritesTitle"><div class="modal-head"><h2 id="favoritesTitle">کارت‌های محبوب ♡</h2><button type="button" class="modal-close" data-close="favoritesDialog" aria-label="بستن">×</button></div><div id="favoritesList" class="favorites-list modal-body"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script>
+/* ۳۶ کارت بازنویسی‌شده برای «دو سال، یک دنیا ما». هر کارت عمداً کوتاه و گفتنی است. */
+window.LOVE_CARD_TYPES = {
+  fun:     {title:'کل‌کل و خنده',emoji:'✦',accent:'peach',cue:'هر دو جواب بدین'},
+  guess:   {title:'چقدر منو بلدی؟',emoji:'◈',accent:'lavender',cue:'اول حدس بزن، بعد جوابش رو بشنو'},
+  memory:  {title:'ماشین زمان',emoji:'✧',accent:'gold',cue:'یه خاطره واقعی تعریف کن'},
+  romance: {title:'حرفِ دل',emoji:'♡',accent:'rose',cue:'به نوبت جواب بدین'},
+  mission: {title:'یه کار دونفره',emoji:'★',accent:'coral',cue:'با هم انجامش بدین'}
+};
+window.LOVE_CARDS = [
+  // شوخی‌هایی که از عادت‌ها و خاطرات واقعی درمی‌آیند، نه سناریوهای کلیشه‌ای.
+  {id:'f01',type:'fun',q:'اگه یه نفر یکی از قرارامون رو از دور ببینه و صدامون رو نشنوه، چه برداشت اشتباهی از ما می‌کنه؟'},
+  {id:'f02',type:'fun',q:'یه عادتم رو تقلید کن که خودم احتمالاً حواسم بهش نیست. من باید حدس بزنم چیه.'},
+  {id:'f03',type:'fun',q:'اگه بخوای برای هر کدوممون یه سمت شغلی توی رابطه بذاری، چی می‌شیم؟ مثل «مسئول پیدا کردن جای غذا»؛ با مدرک!'},
+  {id:'f04',type:'fun',q:'کدوم تیکه‌کلام من رو اون‌قدر شنیدی که می‌تونی دقیقاً با لحن خودم بگی؟ اجراش کن.'},
+  {id:'f05',type:'fun',q:'توی کدوم موقعیت خیلی جدی، فقط کافیه به هم نگاه کنیم تا خنده‌مون بگیره؟'},
+  {id:'f06',type:'fun',q:'اگه از یکی از قرارامون فقط ۱۰ ثانیه فیلم پخش کنن، کدوم ۱۰ ثانیه بیشتر آبرومون رو می‌بره؟'},
+  {id:'f07',type:'fun',q:'به نظرت کدوممون توی «حالا کجا غذا بخوریم؟» بیشتر ادای آدم‌های بی‌تفاوت رو درمیاره؟ دفاعیه هم داری؟'},
+  {id:'f08',type:'fun',q:'یه بار که خواستی پیش من خیلی خفن به نظر برسی ولی گند خورد رو تعریف کن. اگه همچین موردی نداری، از من یکی رو لو بده!'},
+
+  // سؤال‌های حدسی با امکان پاسخ واقعی؛ برای شناخت بیشتر، نه امتحان گرفتن.
+  {id:'g01',type:'guess',q:'وقتی روز بدی داشتم، بیشتر دلم می‌خواد حرف بزنیم، حواسم رو پرت کنی یا فقط کنارم باشی؟'},
+  {id:'g02',type:'guess',q:'اگه همین الان یه ساعت وقت اضافه گیرمون بیاد، اولین پیشنهاد من برای با هم بودن چیه؟'},
+  {id:'g03',type:'guess',q:'از بین قرارهایی که رفتیم، فکر می‌کنی کدوم رو هنوز گاهی توی ذهنم مرور می‌کنم؟'},
+  {id:'g04',type:'guess',q:'به نظرت من سورپرایز رو بیشتر دوست دارم یا اینکه از قبل بدونم قراره چی بشه؟'},
+  {id:'g05',type:'guess',q:'کدوم تعریفِ تو بیشتر به دلم می‌شینه، حتی اگه موقع شنیدنش خودم رو بی‌تفاوت نشون بدم؟'},
+  {id:'g06',type:'guess',q:'وقتی واقعاً خوشحالم، چه حرکت یا رفتاری دارم که از بیرون معلومه؟'},
+  {id:'g07',type:'guess',q:'فکر می‌کنی چه کاری از طرف تو، حتی اگه خیلی کوچیک باشه، روزم رو نجات می‌ده؟'},
+  {id:'g08',type:'guess',q:'اگه قرار باشه برای همین آخر هفته فقط یک برنامه انتخاب کنم، ترجیحم یه جای تازه‌ست یا همون پاتوق آشنای خودمون؟'},
+
+  // جزئیات و خاطرات خاص، به جای پرسش‌های بزرگ و قابل پیش‌بینی.
+  {id:'m01',type:'memory',q:'از اولین باری که همدیگه رو دیدیم، یه جزئیات بگو که فکر می‌کنی من یادم نیست.'},
+  {id:'m02',type:'memory',q:'یه قرار که طبق برنامه پیش نرفت ولی آخرش قشنگ شد یادت هست؟ چی شد که خوب شد؟'},
+  {id:'m03',type:'memory',q:'کدوم جمله یا پیام من رو هنوز می‌تونی با همون لحن توی سرت بشنوی؟'},
+  {id:'m04',type:'memory',q:'اگه از این دو سال فقط یک دقیقه فیلم می‌تونستی نگه داری، کدوم دقیقه رو انتخاب می‌کردی؟'},
+  {id:'m05',type:'memory',q:'یه روز کاملاً معمولی کنار هم داشتیم که هیچ عکس خاصی ازش نداریم ولی هنوز یادت مونده؟'},
+  {id:'m06',type:'memory',q:'کدوم گوشهٔ شهر، آهنگ یا بو دیگه برات مثل قبل نیست چون یاد من می‌افتی؟'},
+  {id:'m07',type:'memory',q:'کی کنارم اون‌قدر راحت شدی که دیگه حس نکردی باید مواظب حرف یا رفتارت باشی؟'},
+
+  // صمیمی، دقیق و مهربان؛ نه تعریف گرفتنِ اجباری.
+  {id:'r01',type:'romance',q:'چه کار کوچیکی از من تو رو آروم می‌کنه، در حالی که شاید خودم اصلاً نفهمم؟'},
+  {id:'r02',type:'romance',q:'توی این دو سال چیزی از من یاد گرفتی که حتی وقتی کنار هم نیستیم باهاته؟'},
+  {id:'r03',type:'romance',q:'وقتی کنار منی، کدوم قسمتِ خودت راحت‌تر بیرون میاد؟'},
+  {id:'r04',type:'romance',q:'یه چیز توی من هست که اول آشنایی نمی‌دیدی ولی حالا دوستش داری؟'},
+  {id:'r05',type:'romance',q:'یه خواسته کوچیک از من داری که شاید هنوز درست و حسابی نگفتیش؟'},
+  {id:'r06',type:'romance',q:'سال بعد همین موقع دوست داری بگیم «بالاخره این کار رو با هم کردیم»؟ اون کار چیه؟'},
+  {id:'r07',type:'romance',q:'یه لحظه کنار من بوده که حس کنی «همین‌جا خوبه، لازم نیست هیچ جا بریم»؟'},
+
+  // فعالیت‌های کوتاه و طبیعی؛ هیچ لمس یا افشای خصوصی‌ای لازم نیست.
+  {id:'t01',type:'mission',q:'۳۰ ثانیه فقط با اشاره یه خاطرهٔ مشترک رو تعریف کن. طرف مقابل باید حدس بزنه کدومه.'},
+  {id:'t02',type:'mission',q:'هر کدوم یه عکس از دو سال گذشته پیدا کنین که اون یکی احتمالاً یادش رفته. با هم نشون بدین.'},
+  {id:'t03',type:'mission',q:'اولین دیدارمون رو مثل گزارش یک مسابقه فوتبال تعریف کن. اون یکی می‌تونه وسط گزارش اعتراض کنه!'},
+  {id:'t04',type:'mission',q:'هر کدوم یه جمله بگین که با «تو نمی‌دونی ولی…» شروع بشه. فقط این بار مهربون باشه.'},
+  {id:'t05',type:'mission',q:'برای یه قرار دونفره با بودجه تقریباً صفر نقشه بکشین که واقعاً بشه همین هفته انجامش داد.'},
+  {id:'t06',type:'mission',q:'هر کدوم یه آهنگ بذارین که فکر می‌کنین مناسب پایان امشبه. بعد برای انتخاب‌تون دلیل بیارین.'}
+];
+
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const cards = window.LOVE_CARDS;
+  const types = window.LOVE_CARD_TYPES;
+  const byId = new Map(cards.map(card => [card.id, card]));
+  const GAME_KEY = 'do-sal-ma:session:v2';
+  const FAVORITES_KEY = 'do-sal-ma:favorites:v2';
+  const START_TURNS = 12;
+  const MAX_TURNS = 20;
+  const fa = value => Number(value).toLocaleString('fa-IR');
+  let session = null;
+  let favorites = readJson(FAVORITES_KEY, []);
+  let toastTimer;
+  if (!Array.isArray(favorites)) favorites = [];
+  favorites = favorites.filter(id => byId.has(id));
+
+  function readJson(key, fallback) {
+    try {const raw = localStorage.getItem(key); return raw === null ? fallback : JSON.parse(raw)}
+    catch {return fallback}
+  }
+  function saveJson(key, value) {try {localStorage.setItem(key, JSON.stringify(value))} catch {}}
+  function save() {if (session) saveJson(GAME_KEY, session)}
+  function load() {
+    const data = readJson(GAME_KEY, null);
+    if (!data || data.version !== 2 || !Array.isArray(data.players) || data.players.length !== 2 ||
+        !Array.isArray(data.done) || !Array.isArray(data.seen) ||
+        !data.done.every(entry => byId.has(entry.id)) || !data.seen.every(id => byId.has(id)) ||
+        (data.current && !byId.has(data.current)) || !Number.isInteger(data.target)) return null;
+    data.target = Math.max(START_TURNS, Math.min(MAX_TURNS, data.target));
+    data.players = data.players.map((name, i) => String(name || (i ? 'تو' : 'من')).slice(0, 20));
+    data.seen = [...new Set(data.seen)];
+    data.stars = Math.max(0, Number(data.stars) || 0);
+    data.missions = Math.max(0, Number(data.missions) || 0);
+    data.ended = Boolean(data.ended);
+    return data;
+  }
+  function showView(view) {
+    for (const name of ['home', 'setup', 'game', 'ending']) $(name + 'View').hidden = name !== view;
+    if (view === 'home') updateHome();
+    if (view === 'game') renderGame();
+    if (view === 'ending') renderEnding();
+    try { window.scrollTo(0, 0); } catch (_) {}
+  }
+  function toast(message) {
+    $('toast').textContent = message;
+    $('toast').classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => $('toast').classList.remove('show'), 2300);
+  }
+  function isFinished() {
+    return session && (session.ended || session.done.length >= session.target || !hasRemaining() && !session.current);
+  }
+  function hasRemaining(type) {return cards.some(c => (!type || c.type === type) && !session.seen.includes(c.id))}
+  function currentCard() {return session && session.current ? byId.get(session.current) : null}
+  function whoseTurn() {return session.done.length % 2}
+  function updateHome() {
+    const saved = session || load();
+    $('resumeBtn').hidden = !saved;
+    if (saved) $('resumeBtn').textContent = saved.ended || saved.done.length >= saved.target ? 'دیدن پایان ♡' : 'ادامهٔ بازی ↶';
+  }
+  function toSetup() {
+    const saved = session || load();
+    if (saved) {
+      $('playerOne').value = saved.players[0];
+      $('playerTwo').value = saved.players[1];
+    }
+    showView('setup');
+  }
+  function startGame(e) {
+    e.preventDefault();
+    if (session && !isFinished() && !confirm('بازی فعلی از اول شروع بشه؟')) return;
+    const names = [
+      $('playerOne').value.trim().slice(0, 20) || 'من',
+      $('playerTwo').value.trim().slice(0, 20) || 'تو'
+    ];
+    session = {version:2, players:names, target:START_TURNS, done:[], seen:[], current:null,
+               stars:0, missions:0, ended:false, startedAt:Date.now()};
+    save();
+    showView('game');
+  }
+  function draw(type) {
+    if (!session || isFinished()) return;
+    const available = cards.filter(c => c.type === type && !session.seen.includes(c.id));
+    if (!available.length) {toast('این دسته دیگه کارت نداره ♡'); return}
+    const card = available[Math.floor(Math.random() * available.length)];
+    session.current = card.id;
+    session.seen.push(card.id);
+    save();
+    renderGame(true);
+  }
+  function redraw() {
+    const card = currentCard();
+    if (!card) return;
+    if (hasRemaining(card.type)) draw(card.type);
+    else toast('این دسته تموم شد؛ یه دستهٔ دیگه بزن');
+  }
+  function renderCategories() {
+    const picker = $('categoryPicker');
+    picker.replaceChildren();
+    Object.entries(types).forEach(([type, meta]) => {
+      const button = document.createElement('button');
+      const remaining = cards.filter(c => c.type === type && !session.seen.includes(c.id)).length;
+      button.type = 'button';
+      button.className = 'category-choice category-' + type + (currentCard()?.type === type ? ' is-selected' : '');
+      button.disabled = remaining === 0 && currentCard()?.type !== type;
+      button.setAttribute('aria-pressed', String(currentCard()?.type === type));
+      button.setAttribute('aria-label', meta.title + (remaining ? '' : '، بدون کارت تازه'));
+      const glyph = document.createElement('span'); glyph.className = 'choice-glyph'; glyph.textContent = meta.emoji;
+      const label = document.createElement('span'); label.textContent = meta.title;
+      button.append(glyph, label);
+      button.addEventListener('click', () => {
+        if (currentCard()?.type === type) return;
+        draw(type);
+      });
+      picker.append(button);
+    });
+  }
+  function renderGame(animate = false) {
+    if (!session) {showView('home'); return}
+    if (isFinished()) {showView('ending'); return}
+    const card = currentCard();
+    $('turnLabel').textContent = 'نوبت ' + session.players[whoseTurn()];
+    $('counterLabel').textContent = fa(session.done.length + 1) + ' از ' + fa(session.target);
+    $('turnProgress').style.width = (session.done.length / session.target * 100) + '%';
+    $('starStat').textContent = '✦ ' + fa(session.stars) + ' حدس درست';
+    $('missionStat').textContent = '♥ ' + fa(session.missions) + ' مأموریت';
+    renderCategories();
+    $('emptyState').hidden = !!card;
+    $('activeCardArea').hidden = !card;
+    if (!card) return;
+    const meta = types[card.type];
+    $('gameCard').className = 'game-card accent-' + meta.accent;
+    $('cardType').textContent = meta.title;
+    $('cardNum').textContent = fa(session.done.length + 1).padStart(2, '۰') + ' / ' + fa(session.target);
+    $('cardGlyph').textContent = meta.emoji;
+    $('cardQuestion').textContent = card.q;
+    $('cardCue').textContent = meta.cue;
+    $('regularControls').hidden = card.type === 'guess' || card.type === 'mission';
+    $('guessControls').hidden = card.type !== 'guess';
+    $('missionControls').hidden = card.type !== 'mission';
+    $('redrawBtn').disabled = !hasRemaining(card.type);
+    $('redrawBtn').title = hasRemaining(card.type) ? '' : 'کارت‌های این دسته تموم شده';
+    $('favoriteCurrentBtn').classList.toggle('is-fav', favorites.includes(card.id));
+    $('favoriteCurrentBtn').textContent = favorites.includes(card.id) ? '♥' : '♡';
+    if (animate) {
+      const element = $('gameCard');
+      element.classList.remove('card-fresh');
+      void element.offsetWidth;
+      element.classList.add('card-fresh');
+    }
+  }
+  function complete(result) {
+    const card = currentCard();
+    if (!card) return;
+    if (card.type === 'guess' && result === 'hit') session.stars++;
+    if (card.type === 'mission' && result === 'done') session.missions++;
+    session.done.push({id:card.id, who:whoseTurn(), result});
+    session.current = null;
+    save();
+    showView(isFinished() ? 'ending' : 'game');
+  }
+  function finishEarly() {
+    if (!session) return;
+    if (!session.done.length && !session.current) {showView('home'); return}
+    if (!confirm('بازی رو همین‌جا تموم کنیم؟')) return;
+    session.ended = true;
+    save(); showView('ending');
+  }
+  function renderEnding() {
+    if (!session) return showView('home');
+    $('endTotal').textContent = fa(session.done.length);
+    $('endStars').textContent = fa(session.stars);
+    $('endMissions').textContent = fa(session.missions);
+    $('wishLabelOne').textContent = session.players[0];
+    $('wishLabelTwo').textContent = session.players[1];
+    const canExtend = session.done.length < MAX_TURNS && hasRemaining();
+    $('extendBtn').hidden = !canExtend;
+  }
+  function extend() {
+    if (!session || !hasRemaining()) return;
+    session.target = Math.min(MAX_TURNS, Math.max(session.target, session.done.length) + 4);
+    session.ended = false;
+    save(); showView('game');
+  }
+  function updateFavoritesCount() {
+    $('favoritesCount').textContent = fa(favorites.length);
+    $('favoritesCount').hidden = favorites.length === 0;
+  }
+  function toggleFavorite() {
+    const card = currentCard(); if (!card) return;
+    favorites = favorites.includes(card.id) ? favorites.filter(id => id !== card.id) : [...favorites, card.id];
+    saveJson(FAVORITES_KEY, favorites);
+    updateFavoritesCount(); renderGame();
+  }
+  function renderFavorites() {
+    const list = $('favoritesList'); list.replaceChildren();
+    if (!favorites.length) {const p = document.createElement('p'); p.className='empty-fav'; p.textContent='هنوز کارتی رو انتخاب نکردین ♡'; list.append(p); return}
+    favorites.forEach(id => {
+      const card = byId.get(id); if (!card) return;
+      const wrap = document.createElement('div'); wrap.className='fav-entry';
+      const head = document.createElement('div'); head.className='fav-entry-header';
+      const title = document.createElement('strong'); title.textContent=types[card.type].title;
+      const remove = document.createElement('button'); remove.type='button'; remove.className='fav-remove'; remove.textContent='حذف ×';
+      remove.addEventListener('click', () => {favorites=favorites.filter(item => item !== id); saveJson(FAVORITES_KEY, favorites); updateFavoritesCount(); renderFavorites(); if (!$('gameView').hidden) renderGame()});
+      head.append(title, remove);
+      const question = document.createElement('p'); question.textContent=card.q;
+      wrap.append(head, question); list.append(wrap);
+    });
+  }
+  async function copy(text) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(text);
+      else {
+        const el=document.createElement('textarea'); el.value=text; el.style.position='fixed'; el.style.opacity='0'; document.body.append(el); el.select();
+        if (!document.execCommand('copy')) throw Error('copy failed'); el.remove();
+      }
+      toast('کپی شد ♡');
+    } catch {toast('کپی نشد؛ می‌تونی متن رو انتخاب کنی')}
+  }
+  function openDialog(id) {const dialog=$(id); if (dialog.showModal) dialog.showModal(); else dialog.setAttribute('open', '')}
+  function closeDialog(id) {const dialog=$(id); if (dialog.close) dialog.close(); else dialog.removeAttribute('open')}
+  function bind() {
+    $('newGameBtn').addEventListener('click', toSetup);
+    $('setupBackBtn').addEventListener('click', () => showView('home'));
+    $('setupForm').addEventListener('submit', startGame);
+    $('resumeBtn').addEventListener('click', () => {session=session||load(); if(session) showView(isFinished()?'ending':'game')});
+    $('gameHomeBtn').addEventListener('click', () => showView('home'));
+    $('brandHome').addEventListener('click', e => {e.preventDefault(); showView('home')});
+    $('endEarlyBtn').addEventListener('click', finishEarly);
+    $('redrawBtn').addEventListener('click', redraw);
+    $('nextCardBtn').addEventListener('click', () => complete('done'));
+    $('skipBtn').addEventListener('click', () => complete('skip'));
+    $('guessHitBtn').addEventListener('click', () => complete('hit'));
+    $('guessMissBtn').addEventListener('click', () => complete('miss'));
+    $('missionDoneBtn').addEventListener('click', () => complete('done'));
+    $('missionSkipBtn').addEventListener('click', () => complete('skip'));
+    $('favoriteCurrentBtn').addEventListener('click', toggleFavorite);
+    $('copyCardBtn').addEventListener('click', () => {const card=currentCard(); if (card) copy(types[card.type].title + '\n' + card.q)});
+    $('favoritesBtn').addEventListener('click', () => {renderFavorites(); openDialog('favoritesDialog')});
+    $('helpBtn').addEventListener('click', () => openDialog('helpDialog'));
+    document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => closeDialog(button.dataset.close)));
+    document.querySelectorAll('dialog.modal').forEach(dialog => dialog.addEventListener('click', e => {if(e.target===dialog)dialog.close()}));
+    $('playAgainBtn').addEventListener('click', () => {session=null; try {localStorage.removeItem(GAME_KEY)} catch{}; toSetup()});
+    $('extendBtn').addEventListener('click', extend);
+    $('copyWishesBtn').addEventListener('click', () => {
+      if (!session) return;
+      const left=$('wishOne').value.trim(), right=$('wishTwo').value.trim();
+      copy('♡ دو سال، یک دنیا ما\n\n' + session.players[0] + ': ' + (left||'…') + '\n' + session.players[1] + ': ' + (right||'…'));
+    });
+  }
+  function init() {
+    session=load();
+    bind(); updateFavoritesCount(); showView('home');
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  }
+  init();
+})();
+
+  </script>
 </body>
 </html>
