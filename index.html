@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#1a1025" />
   <meta name="color-scheme" content="dark" />
-  <meta name="description" content="دو سال، یک دنیا ما؛ بازی دونفرهٔ عاشقانه، بامزه و کمی شیطنت‌آمیز برای سالگرد دوم. آفلاین و خصوصی." />
+  <meta name="description" content="دو سال، یک دنیا ما؛ بازی عاشقانه و بامزهٔ دو نفره." />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="دو سالِ ما" />
@@ -24,106 +24,69 @@
   <div class="background-art" aria-hidden="true"><i class="glow glow-a"></i><i class="glow glow-b"></i><i class="glow glow-c"></i><i class="dot dot-1"></i><i class="dot dot-2"></i><i class="dot dot-3"></i><i class="dot dot-4"></i></div>
   <div class="app-shell">
     <header class="site-header">
-      <a class="brand" href="#home" id="brandHome" aria-label="برگشت به صفحه اصلی">
-        <span class="brand-icon">♥</span>
-        <span class="brand-text"><strong>دو سالِ ما</strong><small>یک بازی برای دو قلب</small></span>
-      </a>
+      <a class="brand" href="#home" id="brandHome" aria-label="صفحهٔ اول"><span class="brand-icon">♥</span><span class="brand-text"><strong>دو سالِ ما</strong><small>فقط من و تو</small></span></a>
       <div class="header-actions">
-        <button class="header-link" type="button" id="helpBtn" aria-label="راهنمای بازی"><span class="icon-text">؟</span><span class="desktop-only">راهنما</span></button>
-        <button class="header-link" type="button" id="favoritesBtn" aria-label="کارت‌های محبوب"><span aria-hidden="true">♡</span><span class="desktop-only">محبوب‌ها</span><span id="favoritesCount" class="tiny-bubble" hidden>0</span></button>
+        <button class="header-link" type="button" id="helpBtn" aria-label="راهنمای کوتاه"><span class="icon-text">؟</span></button>
+        <button class="header-link" type="button" id="favoritesBtn" aria-label="کارت‌های محبوب"><span aria-hidden="true">♡</span><span id="favoritesCount" class="tiny-bubble" hidden>0</span></button>
       </div>
     </header>
-
     <main id="mainContent">
       <section id="homeView" class="view home-view" aria-labelledby="homeTitle">
         <div class="home-grid">
           <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-dot">✦</span> ویژهٔ دومین سالگردِ ما <span class="eyebrow-dot">✦</span></div>
+            <div class="eyebrow"><span class="eyebrow-dot">✦</span> سالگرد دومِ ما <span class="eyebrow-dot">✦</span></div>
             <h1 id="homeTitle">دو سال،<br><span class="gradient-text">یک دنیا ما</span><span class="headline-heart">♥</span></h1>
-            <p class="hero-lead">یه قرار متفاوت؛ پر از خنده‌های بی‌هوا، حدس‌های عجیب، خاطره‌های قشنگ و حرف‌هایی که فقط مال خودمونه.</p>
-            <div class="pill-row"><span class="soft-pill">♡ رمانتیک</span><span class="soft-pill">✦ حسابی فان</span><span class="soft-pill">☾ یه‌کم شیطون</span></div>
-            <div class="hero-buttons">
-              <button id="newGameBtn" class="btn btn-primary btn-large" type="button">بریم بازی کنیم <span class="btn-arrow">←</span></button>
-              <button id="resumeBtn" class="btn btn-outline btn-large" type="button" hidden>ادامهٔ بازی قبلی ↶</button>
-            </div>
-            <div class="hero-note"><span>✧</span> هیچ جوابی آنلاین فرستاده نمی‌شه؛ بازی فقط روی همین دستگاه اجرا می‌شه.</div>
+            <p class="hero-lead">بعضی حرف‌ها رو فقط وقتی بازی می‌کنیم می‌زنیم.</p>
+            <div class="pill-row"><span class="soft-pill">✦ بخندیم</span><span class="soft-pill">♡ یادمون بیاد</span><span class="soft-pill">☾ بیشتر بشناسیم</span></div>
+            <div class="hero-buttons"><button id="newGameBtn" class="btn btn-primary btn-large" type="button">شروع بازی <span class="btn-arrow">←</span></button><button id="resumeBtn" class="btn btn-outline btn-large" type="button" hidden>ادامهٔ بازی ↶</button></div>
           </div>
           <div class="hero-art" aria-hidden="true">
-            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-            <div class="floating-spark spark-1">✦</div><div class="floating-spark spark-2">✧</div><div class="floating-spark spark-3">✳</div>
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="floating-spark spark-1">✦</div><div class="floating-spark spark-2">✧</div><div class="floating-spark spark-3">✳</div>
             <div class="art-card art-card-back"><span class="art-card-small">01 / 02</span><span class="art-card-back-center">LOVE<br>STORY</span><span class="art-card-bottom">✧ ✧ ✧</span></div>
             <div class="art-card art-card-front"><div class="art-eyebrow">THE TWO OF US</div><div class="art-hearts"><span class="heart-outline heart-outline-one">♡</span><span class="heart-outline heart-outline-two">♡</span><span class="art-mini-star">✦</span></div><div class="art-text">تو + من<br><strong>= ما</strong></div><div class="art-footer"><span>سالگرد دوم</span><span>∞</span></div></div>
             <div class="orbit-caption orbit-caption-a">لحظه‌های خاص</div><div class="orbit-caption orbit-caption-b">تا همیشه ♡</div>
           </div>
         </div>
-        <div class="feature-row">
-          <div class="feature"><div class="feature-icon">✦</div><div><strong>۱۴۰ کارت</strong><small>سؤال و مأموریت اختصاصی</small></div></div>
-          <div class="feature"><div class="feature-icon">♡</div><div><strong>چهار فصل جذاب</strong><small>از خنده تا حرف‌های دلی</small></div></div>
-          <div class="feature"><div class="feature-icon">☾</div><div><strong>آفلاین و خصوصی</strong><small>قابل نصب روی گوشی</small></div></div>
-        </div>
       </section>
 
       <section id="setupView" class="view setup-view" hidden aria-labelledby="setupTitle">
-        <div class="small-page-header"><button id="setupBackBtn" class="back-link" type="button">→ برگشت</button><span>آماده‌سازی یک قرار خاص</span></div>
-        <div class="section-heading"><span class="section-overline">BEFORE WE BEGIN</span><h1 id="setupTitle">اسم دو قهرمان این قصه چیه؟</h1><p>فقط دو تا اسم و چند انتخاب کوچیک؛ باقی‌ش با جادوی کارت‌ها.</p></div>
-        <form id="setupForm" class="setup-card">
-          <div class="form-section-number">۰۱ / قهرمان‌های بازی</div>
-          <div class="field-grid">
-            <label class="field"><span>اسم نفر اول <span class="label-emoji">♡</span></span><input id="playerOne" type="text" maxlength="24" placeholder="مثلاً من" autocomplete="off" value="من" required /></label>
-            <label class="field"><span>اسم نفر دوم <span class="label-emoji">✦</span></span><input id="playerTwo" type="text" maxlength="24" placeholder="مثلاً عشق من" autocomplete="off" value="عشق من" required /></label>
-          </div>
-          <div class="sep-line"></div>
-          <div class="form-section-number">۰۲ / اندازهٔ ماجراجویی</div>
-          <div class="length-selector" role="radiogroup" aria-label="تعداد کارت‌ها">
-            <label class="length-option"><input type="radio" name="length" value="24" checked><span class="length-content"><strong>یه قرار شیرین</strong><span>۲۴ کارت · حدود ۳۰ دقیقه</span></span><span class="length-check">✓</span></label>
-            <label class="length-option"><input type="radio" name="length" value="40"><span class="length-content"><strong>قرار کامل</strong><span>۴۰ کارت · حدود ۵۰ دقیقه</span></span><span class="length-check">✓</span></label>
-            <label class="length-option"><input type="radio" name="length" value="60"><span class="length-content"><strong>شبِ بی‌پایان</strong><span>۶۰ کارت · هرچقدر دل‌تون بخواد</span></span><span class="length-check">✓</span></label>
-          </div>
-          <div class="sep-line"></div>
-          <div class="form-section-number">۰۳ / چاشنیِ دلخواه</div>
-          <label class="adult-option" for="adultToggle"><span class="adult-toggle-copy"><strong>کارت‌های صمیمی ۱۸+ <span>☾</span></strong><small>سؤال‌های جسورانه و دلبرانه، بدون محتوای صریح؛ کاملاً اختیاری</small></span><span class="switch"><input type="checkbox" id="adultToggle" aria-describedby="adultDescription"><span class="switch-track"></span></span></label>
-          <div id="adultConsent" class="consent-panel" hidden><p id="adultDescription">برای فعال شدن این کارت‌ها باید هر دو نفر بزرگسال باشین و موافقت کنین. هیچ پاسخ یا تماسی اجباری نیست.</p><label class="consent-line"><input id="ageConfirmed" type="checkbox"> <span>تأیید می‌کنیم که هر دو ۱۸ سال یا بیشتر داریم.</span></label><label class="consent-line"><input id="consentConfirmed" type="checkbox"> <span>هر دو با دیدن این کارت‌ها موافقیم و می‌تونیم هر لحظه ردشون کنیم.</span></label></div>
-          <p id="setupError" class="form-error" role="alert" hidden></p>
-          <button type="submit" class="btn btn-primary btn-full btn-start">قصهٔ امشب رو شروع کنیم <span>←</span></button>
-          <p class="setup-footnote">هر کارت رو می‌تونین رد کنین؛ بدون توضیح، بدون از دست دادن امتیاز.</p>
+        <div class="small-page-header"><button id="setupBackBtn" class="back-link" type="button">→ برگشت</button></div>
+        <div class="section-heading"><span class="section-overline">THE TWO OF US</span><h1 id="setupTitle">خب، کیا بازی می‌کنن؟</h1></div>
+        <form id="setupForm" class="setup-card setup-simple">
+          <div class="field-grid"><label class="field"><span>نفر اول ♡</span><input id="playerOne" type="text" maxlength="20" value="من" autocomplete="off" required /></label><label class="field"><span>نفر دوم ✦</span><input id="playerTwo" type="text" maxlength="20" value="تو" autocomplete="off" required /></label></div>
+          <button type="submit" class="btn btn-primary btn-full btn-start">بزن بریم <span>←</span></button>
         </form>
       </section>
 
       <section id="gameView" class="view game-view" hidden aria-labelledby="gameHeading">
-        <div class="game-heading-row"><button id="gameHomeBtn" class="back-link" type="button">→ خانه</button><span class="game-mini-title" id="gameHeading">قرار دو نفرهٔ ما <span>♡</span></span><button id="restartBtn" class="subtle-text-btn" type="button" title="شروع بازی تازه">↻ شروع دوباره</button></div>
-        <div id="chapterRail" class="chapter-rail" role="progressbar" aria-label="پیشرفت بازی"></div>
-        <div class="game-grid">
-          <div class="game-center">
-            <div class="card-toolbar"><div class="turn-indicator"><span class="pulse-dot"></span><span id="turnLabel">نوبت توئه!</span></div><span id="counterLabel" class="card-counter">کارت ۱ از ۲۴</span></div>
-            <div class="game-card-wrap" id="gameCardWrap"><article id="gameCard" class="game-card accent-peach"><div class="card-inner-decor" aria-hidden="true"><i class="decor-corner decor-one"></i><i class="decor-corner decor-two"></i><i class="decor-corner decor-three"></i><i class="decor-corner decor-four"></i></div><div class="card-header"><span id="cardType" class="card-type">فان و خنده</span><span class="card-num" id="cardNum">01 / 24</span></div><div class="card-body"><div id="cardGlyph" class="card-glyph">✦</div><h2 id="cardQuestion">به دنیای بازی خوش اومدین!</h2><p id="cardSubtitle" class="card-subtitle">همه‌چی از اینجا شروع می‌شه...</p></div><div class="card-footer"><span id="cardChapter">فصل اول · یخ‌ها آب می‌شن</span><span class="heart-stamp">♡</span></div></article></div>
-            <div class="card-under"><div class="tiny-hint" id="cardTip">جواب‌ها فقط بین خودتونه.</div><div class="icon-buttons"><button id="favoriteCurrentBtn" type="button" class="icon-action" aria-label="افزودن به محبوب‌ها" title="ذخیره در محبوب‌ها">♡</button><button id="copyCardBtn" type="button" class="icon-action" aria-label="کپی متن کارت" title="کپی کارت">⧉</button></div></div>
-            <div id="regularControls" class="card-controls"><button id="skipBtn" type="button" class="btn btn-ghost">این یکی نه ↷</button><button id="nextCardBtn" type="button" class="btn btn-primary btn-next">کارت بعدی <span>←</span></button></div>
-            <div id="guessControls" class="card-controls" hidden><button id="guessMissBtn" type="button" class="btn btn-ghost">اشتباه حدس زدم</button><button id="guessHitBtn" type="button" class="btn btn-primary btn-next">درست حدس زدم! <span>+۱ ✦</span></button></div>
-            <div id="missionControls" class="card-controls" hidden><button id="missionSkipBtn" type="button" class="btn btn-ghost">بی‌خیال این مأموریت</button><button id="missionDoneBtn" type="button" class="btn btn-primary btn-next">انجامش دادیم! <span>+۱ ♥</span></button></div>
-            <div class="game-card-smallprint">یه قرار خوب با رضایت و راحتی هر دو نفر قشنگ‌تره. رد کردن همیشه آزاده. ♡</div>
+        <div class="game-heading-row"><button id="gameHomeBtn" class="back-link" type="button">→ خانه</button><span class="game-mini-title" id="gameHeading">دو سالِ ما <span>♡</span></span><button id="endEarlyBtn" class="subtle-text-btn" type="button">پایان بازی</button></div>
+        <div class="compact-progress" aria-label="پیشرفت بازی"><div class="compact-progress-text"><span id="turnLabel">نوبت منه</span><span id="counterLabel">۱ از ۱۲</span></div><div class="progress-track"><div id="turnProgress" class="progress-fill"></div></div></div>
+        <div class="game-center game-main">
+          <div class="pick-header"><strong>این نوبت چی انتخاب می‌کنی؟</strong><span>هر دفعه یه دسته</span></div>
+          <div id="categoryPicker" class="category-picker" role="group" aria-label="انتخاب دستهٔ کارت"></div>
+          <div id="emptyState" class="empty-state"><div class="empty-heart">♡</div><h2>یه دسته انتخاب کن</h2><p>ببینیم چی از آب درمیاد...</p></div>
+          <div id="activeCardArea" hidden>
+            <div class="game-card-wrap"><article id="gameCard" class="game-card accent-peach"><div class="card-inner-decor" aria-hidden="true"><i class="decor-corner decor-one"></i><i class="decor-corner decor-two"></i><i class="decor-corner decor-three"></i><i class="decor-corner decor-four"></i></div><div class="card-header"><span id="cardType" class="card-type"></span><span class="card-num" id="cardNum"></span></div><div class="card-body"><div id="cardGlyph" class="card-glyph">✦</div><h2 id="cardQuestion"></h2></div><div class="card-footer"><span id="cardCue"></span><span class="heart-stamp">♡</span></div></article></div>
+            <div class="card-under"><button id="redrawBtn" class="redraw-link" type="button">↻ یه کارت دیگه</button><div class="icon-buttons"><button id="favoriteCurrentBtn" type="button" class="icon-action" aria-label="ذخیره کارت">♡</button><button id="copyCardBtn" type="button" class="icon-action" aria-label="کپی کارت">⧉</button></div></div>
+            <div id="regularControls" class="card-controls"><button id="skipBtn" type="button" class="btn btn-ghost">ردش کن</button><button id="nextCardBtn" type="button" class="btn btn-primary btn-next">جواب دادیم <span>←</span></button></div>
+            <div id="guessControls" class="card-controls" hidden><button id="guessMissBtn" type="button" class="btn btn-ghost">نه، این نبود</button><button id="guessHitBtn" type="button" class="btn btn-primary btn-next">درست حدس زدم! <span>✦</span></button></div>
+            <div id="missionControls" class="card-controls" hidden><button id="missionSkipBtn" type="button" class="btn btn-ghost">این یکی نه</button><button id="missionDoneBtn" type="button" class="btn btn-primary btn-next">انجام شد! <span>♥</span></button></div>
           </div>
-          <aside class="score-sidebar">
-            <div class="sidebar-panel"><div class="sidebar-overline">TWO HEARTS. ONE STORY.</div><h3>تیمِ دو نفرهٔ ما <span>♡</span></h3><div class="score-players"><div class="score-player"><span class="avatar avatar-one">♡</span><div><span id="scoreNameOne">من</span><small>حدس‌های درست</small></div><strong id="scoreOne">۰</strong></div><div class="score-player"><span class="avatar avatar-two">✦</span><div><span id="scoreNameTwo">عشق من</span><small>حدس‌های درست</small></div><strong id="scoreTwo">۰</strong></div></div><div class="bond-row"><div><span class="bond-label">قلب‌های مشترک</span><strong id="bondValue">۰ ♥</strong></div><div class="bond-bar"><span id="bondFill"></span></div></div><div class="stat-row"><span>کارت‌های بازی‌شده</span><strong id="playedValue">۰</strong></div></div>
-            <div class="sidebar-panel chapter-info"><div class="chapter-top"><span class="chapter-overline">فصلِ جاری</span><span class="little-star">✧</span></div><strong id="chapterName">یخ‌ها آب می‌شن</strong><p id="chapterDescription">اول کمی بخندیم!</p><div class="chapter-progress"><span id="chapterProgress"></span></div></div>
-            <div class="sidebar-quote"><span>“</span>قشنگیِ این بازی به جواب‌های درست نیست؛ به حرف‌هاییه که با هم می‌زنیم.<span>”</span></div>
-          </aside>
+          <div class="mini-stats"><span id="starStat">✦ ۰ حدس درست</span><span id="missionStat">♥ ۰ مأموریت</span></div>
         </div>
       </section>
 
       <section id="endingView" class="view ending-view" hidden aria-labelledby="endingTitle">
-        <div class="end-confetti" aria-hidden="true">✦ ♡ ✧ ♡ ✦</div>
-        <div class="ending-header"><span class="end-badge">THE END? NOT EVEN CLOSE.</span><div class="end-large-heart" aria-hidden="true">♥</div><h1 id="endingTitle">پایان بازی،<br><span class="gradient-text">شروع کلی خاطره...</span></h1><p>شما دوباره یادآوری کردین که «ما» از هزار تا اتفاق کوچیک و قشنگ ساخته شده.</p></div>
-        <div class="ending-stats"><div><strong id="endTotal">۲۴</strong><span>کارت مشترک</span></div><div><strong id="endBond">۰</strong><span>قلب مشترک</span></div><div><strong id="endSkips">۰</strong><span>کارت ردشده</span></div></div>
-        <div class="wish-card"><div class="wish-heading"><span>✉️</span><div><strong>نامه‌ای برای سال سوم</strong><p>دو آرزو برای آینده‌مون بنویسین. روی همین گوشی می‌مونه تا وقتی که خودتون کپی یا به اشتراک بذارین.</p></div></div><label class="field"><span id="wishLabelOne">آرزوی نفر اول</span><textarea id="wishOne" rows="3" placeholder="امیدوارم سال بعد..." maxlength="500"></textarea></label><label class="field"><span id="wishLabelTwo">آرزوی نفر دوم</span><textarea id="wishTwo" rows="3" placeholder="آرزو می‌کنم..." maxlength="500"></textarea></label><button id="copyWishesBtn" class="btn btn-primary btn-full" type="button">کپی یادگاری امشب ♡</button></div>
-        <div class="ending-buttons"><button id="playAgainBtn" class="btn btn-outline" type="button">یک بازی تازه ↻</button><button id="endFavoritesBtn" class="btn btn-ghost" type="button">دیدن کارت‌های محبوب ♡</button></div>
+        <div class="end-confetti" aria-hidden="true">✦ ♡ ✧ ♡ ✦</div><div class="ending-header"><div class="end-large-heart" aria-hidden="true">♥</div><h1 id="endingTitle">بازم دلم می‌خواد<br><span class="gradient-text">باهات حرف بزنم.</span></h1><p id="endCaption">این دور بازی تموم شد ♡</p></div>
+        <div class="ending-stats end-stats-simple"><div><strong id="endTotal">۱۲</strong><span>نوبت با هم</span></div><div><strong id="endStars">۰</strong><span>حدس درست</span></div><div><strong id="endMissions">۰</strong><span>مأموریت</span></div></div>
+        <div class="wish-card"><div class="wish-heading"><span>✉</span><div><strong>یه یادگاری برای سال سوم</strong></div></div><label class="field"><span id="wishLabelOne">آرزوی نفر اول</span><textarea id="wishOne" rows="2" placeholder="سال بعد دوست دارم..." maxlength="400"></textarea></label><label class="field"><span id="wishLabelTwo">آرزوی نفر دوم</span><textarea id="wishTwo" rows="2" placeholder="منم دلم می‌خواد..." maxlength="400"></textarea></label><button id="copyWishesBtn" class="btn btn-primary btn-full" type="button">کپی یادگاری ♡</button></div>
+        <div class="ending-buttons"><button id="extendBtn" class="btn btn-primary" type="button">۴ نوبت دیگه؟ ♡</button><button id="playAgainBtn" class="btn btn-outline" type="button">از اول</button></div>
       </section>
     </main>
-
-    <footer class="site-footer"><span>ساخته شده با عشق، برای دو سالِ ما ♡</span><span>از راه دور و بدون ثبت‌نام هم می‌شه بازی کرد.</span></footer>
+    <footer class="site-footer"><span>برای دو سالِ ما ♡</span></footer>
   </div>
-
-  <dialog id="helpDialog" class="modal" aria-labelledby="helpTitle"><div class="modal-head"><h2 id="helpTitle">چطور بازی کنیم؟ <span>✦</span></h2><button type="button" class="modal-close" data-close="helpDialog" aria-label="بستن">×</button></div><div class="modal-body"><p class="modal-lead">مثل یک قرار چهار فصلی: اول خنده، بعد خاطره، بعد حرف دل و آخرش غافلگیری.</p><div class="help-item"><span class="help-icon">✦</span><div><strong>سؤال‌های فان و عاشقانه</strong><p>نوبتی بخونین و هر دو جواب بدین. هیچ جواب درست یا غلطی نداریم.</p></div></div><div class="help-item"><span class="help-icon">◈</span><div><strong>«چقدر منو بلدی؟»</strong><p>کسی که نوبتشه، جواب نفر مقابل رو حدس بزنه. اگر درست بود، «درست حدس زدم» رو بزنین و یک امتیاز بگیرین.</p></div></div><div class="help-item"><span class="help-icon">★</span><div><strong>مأموریت‌ها</strong><p>اگر هر دو دوست داشتین انجام بدین، یک قلب مشترک می‌گیرین.</p></div></div><div class="help-item"><span class="help-icon">☾</span><div><strong>کارت‌های بزرگسالانه</strong><p>فقط اگر موقع شروع با رضایت هر دو فعالش کرده باشین؛ بدون فشار و بدون پاسخ اجباری.</p></div></div><div class="help-item"><span class="help-icon">♡</span><div><strong>رد کردن همیشه آزاده</strong><p>می‌تونین هر تعداد کارت رو رد کنین؛ بدون جریمه. با قلب کوچک، کارت‌های محبوب رو نگه دارین.</p></div></div><p class="help-note">بازی به اینترنت، حساب کاربری یا دسترسی به داده‌های شخصی نیاز نداره. اسم‌ها و امتیازها فقط در حافظهٔ همین مرورگر ذخیره می‌شن.</p></div></dialog>
-  <dialog id="favoritesDialog" class="modal" aria-labelledby="favoritesTitle"><div class="modal-head"><h2 id="favoritesTitle">کارت‌های محبوبِ ما ♡</h2><button type="button" class="modal-close" data-close="favoritesDialog" aria-label="بستن">×</button></div><div id="favoritesList" class="favorites-list modal-body"><p class="empty-fav">هنوز کارتی رو قلب نزدی! ♡</p></div></dialog>
+  <dialog id="helpDialog" class="modal" aria-labelledby="helpTitle"><div class="modal-head"><h2 id="helpTitle">قانونش خیلی ساده‌ست ♡</h2><button type="button" class="modal-close" data-close="helpDialog" aria-label="بستن">×</button></div><div class="modal-body help-short"><p>نوبتی یه دسته انتخاب کنین و کارت رو بخونین. خوشتون نیومد؟ «یه کارت دیگه» یا یه دستهٔ دیگه رو بزنین.</p><p>در «چقدر منو بلدی؟» اول نفرِ نوبت‌دار جواب طرف مقابل رو حدس می‌زنه، بعد جواب واقعی رو می‌شنوه.</p><p>۱۲ نوبت بازی دارین؛ هر نوبت برای یه نفره. هر کارتی رو هم خواستین رد کنین.</p></div></dialog>
+  <dialog id="favoritesDialog" class="modal" aria-labelledby="favoritesTitle"><div class="modal-head"><h2 id="favoritesTitle">کارت‌های محبوب ♡</h2><button type="button" class="modal-close" data-close="favoritesDialog" aria-label="بستن">×</button></div><div id="favoritesList" class="favorites-list modal-body"></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>
